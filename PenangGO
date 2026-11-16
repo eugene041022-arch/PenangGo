@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PenangGuide - Penang Food, Hidden Spots & Weekend Events Map</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入免费开源地图库 Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map { height: 340px; width: 100%; z-index: 1; }
+        .custom-pin { display: flex; align-items: center; justify-content: center; border-radius: 9999px; font-weight: bold; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); border: 2px solid white; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans pb-20">
+
+    <!-- 顶部导航栏 -->
+    <header class="bg-rose-600 text-white p-3.5 shadow-md sticky top-0 z-30">
+        <div class="max-w-lg mx-auto flex justify-between items-center">
+            <div>
+                <h1 id="ui-title" class="text-lg font-extrabold tracking-wide flex items-center gap-1.5">
+                    <span>📍</span> PenangGuide
+                </h1>
+                <p id="ui-subtitle" class="text-[11px] text-rose-100">Local Food · Weekend Events · Secret Spots</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <!-- 语言切换按钮 -->
+                <button onclick="toggleLang()" id="langBtn" class="bg-rose-700 hover:bg-rose-800 text-white text-xs font-bold px-2.5 py-1.5 rounded-lg border border-rose-500 transition">
+                    中 / EN
+                </button>
+                <button onclick="openMerchantModal()" id="ui-merchant-btn" class="bg-amber-400 hover:bg-amber-300 text-stone-900 text-xs font-bold px-3 py-1.5 rounded-full shadow transition">
+                    Partner With Us
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-lg mx-auto">
+
+        <!-- 分类筛选胶囊栏 -->
+        <div class="bg-
